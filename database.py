@@ -8,7 +8,7 @@ def recover_array(emb_str):
     return arr
 
 def add_items():
-    filename = "../items.csv"
+    filename = "items.csv"
     with open(filename) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=',')
         next(csv_reader) # skip header
