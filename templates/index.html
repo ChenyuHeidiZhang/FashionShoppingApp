@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<title> MyApp </title>
+</head>
+
+<body>
+	
+	<!-- Its the form where a user can submit his or her name and email -->
+
+	<form class="form-inline" action="" method="POST">
+		<label>Text Input</label>
+	  	<input type="text" id="input_text" placeholder="Search with text" name="input_text">
+	  	<br>
+		<label>Image Input</label>
+	  	<input type="url" id="input_img_url" placeholder="Or, search an url to an image" name="input_img_url">
+	  	<button type="submit">Submit</button>
+	</form>
+
+
+	<!-- The table where all the data from the DB will be appeared -->
+
+	<table class="data" border="1" style="width: 100%; margin-top: 20px; text-align: center;">
+		<tr>
+			<th colspan="3">Retrieved Items</th>
+	  	</tr>
+	  	<tr>
+	  		<td>ID</td>
+	    	<td>Description</td>
+	    	<td>URL</td>
+	  	</tr>
+
+	  	<!-- The retrieved_items is a variable containing all the retrieved items. -->
+
+	  	{% for item in retrieved_items %}
+	  	<tr>
+	  		<td>{{item._id}}</td>
+	  		<td>{{item.description}}</td>
+	  		<td><a href={{item.url}}>{{item.url}}</a></td>
+	  	</tr>
+	  	{% endfor %}
+
+	</table>
+</body>
